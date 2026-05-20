@@ -29,16 +29,26 @@ openspec validate --all --strict    # validate every change + spec
 openspec archive add-vault-storage  # after implementation, fold into openspec/specs/
 ```
 
-## Build
+## Build & run
 
-This is a SwiftPM package targeting macOS 14+ with Swift 6.
+Requires Xcode (not just CommandLineTools) for SwiftUI/XCTest:
 
 ```sh
-swift build
-swift test
+sudo xcode-select -s /Applications/Xcode.app/Contents/Developer   # one time
 ```
 
-For the full macOS app target, open `Package.swift` in Xcode and add an App target — or generate an `.xcodeproj` once the implementation is fleshed out.
+**Run the app:**
+```sh
+./scripts/run.sh
+```
+This builds with `swift build`, wraps the binary in a minimal `.app` bundle under `.build/LLMNotes.app`, and launches it via `open` so macOS treats it as a real foreground app (Dock icon, activated window).
+
+**Or open in Xcode:** `xed Package.swift`, pick the **LLMNotes** scheme, hit ⌘R.
+
+**Tests:**
+```sh
+swift test
+```
 
 ## Dependency order
 

@@ -13,6 +13,7 @@ xcuserdata/
 
 # Swift Package Manager
 .build/
+LLMNotes.app/
 .swiftpm/
 *.xcodeproj/project.xcworkspace/xcuserdata/
 
