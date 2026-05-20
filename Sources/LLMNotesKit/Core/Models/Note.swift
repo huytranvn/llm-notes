@@ -1,8 +1,15 @@
 import Foundation
 
-struct Note: Identifiable, Hashable, Sendable {
-    let id: UUID
-    var path: URL
-    var title: String
-    var modifiedAt: Date
+public struct Note: Identifiable, Hashable, Sendable {
+    public let id: UUID
+    public var path: URL
+    public var title: String
+    public var modifiedAt: Date
+
+    public init(id: UUID, path: URL, title: String, modifiedAt: Date) {
+        self.id = id
+        self.path = path
+        self.title = title
+        self.modifiedAt = modifiedAt
+    }
 }
